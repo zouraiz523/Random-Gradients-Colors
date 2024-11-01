@@ -1,0 +1,147 @@
+html {
+  font-family: system-ui;
+  font-size:16px;
+  text-align:center;
+  background-color:rgb(10, 10, 10);
+  scroll-behavior:smooth;
+  overflow-x: hidden;
+}
+
+#bg {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:-1;
+}
+
+h1 {
+  margin-bottom:0;
+  margin-top:45px;
+}
+h6 {
+  margin-top:0;
+  margin-bottom:50px;
+}
+
+a {
+  color:#ffffff;
+}
+
+#holdMe {
+  width:100%;
+  max-width:1400px;
+  margin:0 auto;
+}
+
+.colorBox {
+  --copy: 'Copy';
+  width:17%;
+  display:inline-block;
+  margin: 1rem;
+  border-radius:10px;
+  background: #ffffff;
+  position:relative;
+  animation: reveal 1s linear forwards;
+}
+.colorBox:hover{
+  z-index: 1;
+  box-shadow: 0px 8px 50px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+}
+@keyframes reveal {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.mode .colorBox {
+  background:#ededed;
+}
+
+.color {
+  width:100%;
+  aspect-ratio: 1/.75;
+  box-sizing:border-box;
+  border-radius:10px;
+  color:white;
+  padding:10px;
+  cursor:pointer;
+  resize: none;
+  outline:0;
+  border:0;
+  font-size:12px;
+  overflow:hidden;
+  position:relative;
+}
+
+.colorBox:after {
+  content: var(--copy);
+  position:absolute;
+  color:white;
+  bottom: 50px;
+  right: 10px;
+  pointer-events:none;
+  opacity: 1;
+  transition:.5s;
+  font-size: .8rem;
+}
+.colorBox:after:hover {
+  opacity:1;
+}
+
+.copied:after {
+  --copy: '👍';
+  font-size: 2rem !important;
+}
+
+.colorSwatch {
+  width:12px;
+  height:12px;
+  display:inline-block;
+  border-radius:50%;
+}
+
+.colorOne, .colorTwo {
+  width:100%;
+  border-radius:50%;
+  font-weight:900;
+  font-size:14px;
+  padding:10px 0px;
+  color:black;
+}
+
+.colorOne .colorSwatch:last-child {
+  margin-left:20px;
+}
+
+@media screen and (max-width:1025px) {
+  .colorBox {
+    width:25%;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .colorBox {
+    width:33%;
+  }
+}
+
+@media screen and (max-width:550px) {
+  .colorBox {
+    width:95%;
+  }
+}
+
+/* Gradient Scrollbar */
+body::-webkit-scrollbar {
+    border-radius: 1px;
+    width: 2px;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: transparent; /* opacity: 0; should do the thing either */
+    box-shadow: 0px 0px 0px 100000vh rgb(205, 205, 205);
+  }
+
+  
